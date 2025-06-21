@@ -1,17 +1,17 @@
-<div class="w-full min-h-screen h-full flex flex-col top-0 justify-center bg-zinc-200">
+<div class="w-full min-h-screen h-full flex flex-col top-0 justify-center bg-zinc-300">
   
     <div class="w-full h-[8%] flex flex-row justify-between px-5" >
         <button mat-raised-button class=" w-fit h-fit" style="background-color: red; color: white;" (click)="onClickGoTo('home')" >
             Go to home
         </button>
-        <a class="text-blue-700 cursor-pointer" (click)="onClickGoTo('about-me')" >
+        <button mat-raised-button class=" w-fit h-fit" style="background-color: rgb(24, 204, 224); color: white;" (click)="onClickGoTo('about-me')" >
             About me
-        </a>
+        </button>
     </div>
 
   <div class="w-full h-[85%] flex items-center justify-center">
     <iframe 
-      src="assets/Ayush_resume.pdf" 
+      [src]="resumeUrl" 
       width="60%" 
       height="100%" 
       class="rounded-xl shadow-md border border-gray-300">

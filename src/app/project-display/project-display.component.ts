@@ -2,11 +2,12 @@ import { Component, signal } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { projectContent, projectContentI } from '../shared/project-content.model';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-project-display',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './project-display.component.html',
   styleUrl: './project-display.component.css',
 })

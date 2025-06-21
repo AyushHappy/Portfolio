@@ -21,7 +21,7 @@ export const projectContent: projectContentI[] = [
             'assets/screenshots/2.png',
             'assets/screenshots/3.png',
         ],
-        demo: ""
+        demo: "live demo"
     },
     {
         name: "Motion Detector",
@@ -33,7 +33,7 @@ export const projectContent: projectContentI[] = [
             'Angular', 'Jaa', 'Spring boot 3', 'Spring 6', 'Kafka', 'Redis',
         ],
         screenshots: [],
-        demo: ""
+        demo: "live demo"
     },
     {
         name: "Library Management System",
@@ -45,6 +45,6 @@ export const projectContent: projectContentI[] = [
             'Angular', 'Jaa', 'Spring boot 3', 'Spring 6', 'Kafka', 'Redis',
         ],
         screenshots: [],
-        demo: ""
+        demo: "live demo"
     }
 ]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button'
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +10,11 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './resume.component.css'
 })
 export class ResumeComponent {
-  constructor(private router:Router){
+
+  resumeUrl: SafeResourceUrl;
+
+  constructor(private router:Router,private sanitizer:DomSanitizer){
+    this.resumeUrl=this.sanitizer.bypassSecurityTrustResourceUrl('assets/Ayush_resume.pdf');
   }
 
   onClickGoTo(link:string){

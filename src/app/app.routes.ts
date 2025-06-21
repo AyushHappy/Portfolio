@@ -2,9 +2,10 @@ import { Routes } from '@angular/router';
 import { ShowcaseComponent } from './main-screens/showcase/showcase.component';
 import { GreetingComponent } from './main-screens/greeting/greeting.component';
 import { MainBodyComponent } from './main-screens/main-body/main-body.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './project-display/dashboard/dashboard.component';
 import { ProjectDisplayComponent } from './project-display/project-display.component';
 import { ResumeComponent } from './resume/resume.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     {
         path:'resume',
         component:ResumeComponent,
+    },
+    {
+        path:'about-me',
+        component:AboutMeComponent,
     },
     {
         path:'projects',
