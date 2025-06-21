@@ -4,6 +4,7 @@ import { GreetingComponent } from './main-screens/greeting/greeting.component';
 import { MainBodyComponent } from './main-screens/main-body/main-body.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectDisplayComponent } from './project-display/project-display.component';
+import { ResumeComponent } from './resume/resume.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,10 @@ export const routes: Routes = [
     {
         path:'home',
         component:ShowcaseComponent,
+    },
+    {
+        path:'resume',
+        component:ResumeComponent,
     },
     {
         path:'projects',
