@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { projectContent } from '../../../shared/project-content.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,11 +11,9 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
 
-  bottomContents: string[] = [
-    'Student Management System',
-    'Motion Detector',
-    'Library Management System',
-  ];
+  @Input() showContent:boolean=true;
+
+  bottomContents=projectContent;
 
   constructor(private router:Router){
   }

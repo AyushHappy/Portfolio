@@ -7,10 +7,10 @@
     </div>
     <div class="w-[100%] h-[10%] flex flex-row">
         <p class="h-[100%] w-[10%] py-2">
-            technolgy used :
+            tech-used :
         </p>
         <ul class="flex gap-4 list-none overflow-x-scroll w-[90%] h-[100%] no-scrollbar">
-            @for (item of items; track item) {
+            @for (item of projectContents.technology; track item) {
             <li class="px-4 py-2 bg-gray-200 rounded-xl whitespace-nowrap ">
                 {{ item }}
             </li>
@@ -23,20 +23,20 @@
         <label class="text-xl text-fuchsia-950">Screenshots</label>
 
         <div class="flex gap-4 overflow-x-auto pb-2">
-            @for (img of images; track img) {
+            @for (img of projectContents.screenshots; track img) {
             <img [src]="img" (click)="openPreview(img)"
                 class="h-40 rounded-xl cursor-pointer transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" />
             }
         </div>
     </div>
 
-    <div class="w-full h-[10%]">
-        <a>lie demo</a>
+    <div class="w-full h-[10%] flex justify-center">
+        <a>live demo</a>
     </div>
 </div>
 
 @if (previewImg()) {
 <div class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50" (click)="closePreview()">
-    <img [src]="previewImg()" class="max-h-[80%] max-w-[90%] rounded-xl shadow-lg" />
+    <img [src]="previewImg()" class="max-h-[80%] max-w-[90%]  shadow-lg" />
 </div>
 }

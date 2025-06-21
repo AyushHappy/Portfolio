@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { projectContent, projectContentI } from '../shared/project-content.model';
 
 @Component({
   selector: 'app-project-display',
@@ -13,13 +14,15 @@ export class ProjectDisplayComponent {
 
   currentLabel = signal<string>('');
 
-  constructor(private router: Router) {}
+  protected projectContents!: projectContentI;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    // 1. Set label immediately on init (for first route)
+    // Set label and content on initial load
     this.updateLabelFromUrl(this.router.url);
 
-    // 2. Watch for route changes
+    // Watch for future route changes
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -32,13 +35,17 @@ export class ProjectDisplayComponent {
     const last = segments[segments.length - 1] || '';
     const label = last.toUpperCase().replace(/-/g, ' ');
     this.currentLabel.set(label);
-  }
 
-  images = [
-    'assets/screenshots/1.png',
-    'assets/screenshots/2.png',
-    'assets/screenshots/3.png',
-  ];
+    const found = projectContent.find(
+      p => p.name.toUpperCase() === label
+    );
+
+    if (found) {
+      this.projectContents = found;
+    } else {
+      console.error('No matching project found for:', label);
+    }
+  }
 
   previewImg = signal<string | null>(null);
 
@@ -49,9 +56,4 @@ export class ProjectDisplayComponent {
   closePreview() {
     this.previewImg.set(null);
   }
-
-  items = [
-    'Angular', 'Jaa', 'Spring boot 3', 'Spring 6', 'Kafka', 'Redis',
-    'Angular', 'Jaa', 'Spring boot 3', 'Spring 6', 'Kafka', 'Redis',
-  ];
 }

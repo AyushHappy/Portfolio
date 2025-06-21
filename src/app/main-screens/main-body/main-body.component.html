@@ -2,8 +2,8 @@
 <div class="flex w-screen h-screen gap-4 overflow-hidden">
 
   <!-- Sidebar (fixed width) -->
-  <div class="w-64 bg-sky-950 z-20">
-    <app-sidebar></app-sidebar>
+  <div class="bg-sky-950 z-20" [ngClass]="showMenu?'w-64':'w-0'">
+    <app-sidebar [showContent]="showMenu"></app-sidebar>
   </div>
 
   <!-- Right side: Topbar + Content -->
@@ -11,7 +11,7 @@
 
     <!-- Topbar (fixed height) -->
     <div class="h-16 bg-gray-400 rounded-lg z-10">
-      <app-topbar></app-topbar>
+      <app-topbar (ToggleMenu)="onToggleMenu()"></app-topbar>
     </div>
 
     <!-- Main content wrapper: fills rest of screen -->
