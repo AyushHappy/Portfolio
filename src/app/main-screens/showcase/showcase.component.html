@@ -1,0 +1,29 @@
+<div class="min-h-screen bg-slate-200 gap-4 flex flex-col items-center justify-center text-gray-900 p-5 top-0 w-full h-full">
+  <img [src]="my_image" class="rounded-full size-24 -mt-20">
+  <a class="text-2xl hover:text-blue-500 cursor-pointer" (click)="onClick('aboutMe')">About me</a>
+
+  <p class="text-lg text-center max-w-xl">
+    I build modern web applications with Angular, TailwindCSS, and robust backend integrations.
+  </p>
+
+  <div class="mt-10 w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-2 justify-center ">
+    <div class="w-full flex flex-row justify-center items-center">
+      <div 
+        class="p-6 w-72 h-40 bg-white rounded-xl shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:outline hover:outline-2 hover:outline-indigo-500 cursor-pointer"
+        role="button">
+        <h3 class="font-semibold text-xl mb-2">Resume</h3>
+        <p class="text-gray-700">My resume containing</p>
+        <p class="text-gray-700">skills,experience,education,projects</p>
+      </div>
+    </div>
+
+    <div class="w-full flex flex-row justify-center items-center" >
+      <div 
+      class="p-6 w-72 h-40 bg-white rounded-xl shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:outline hover:outline-2 hover:outline-indigo-500 cursor-pointer"
+      role="button" (click)="onClick('projects')">
+      <h3 class="font-semibold text-xl mb-2">Projects</h3>
+      <p class="text-gray-700">Angular, HTML, SCSS, TailwindCSS</p>
+    </div>
+    </div>
+  </div>
+</div>

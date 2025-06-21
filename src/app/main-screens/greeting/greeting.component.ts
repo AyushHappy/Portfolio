@@ -36,7 +36,7 @@ export class GreetingComponent  {
   }
 
   showAboutMe(){
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['home']);
     console.log('naigate');
   }
 }

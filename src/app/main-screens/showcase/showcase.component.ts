@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   standalone:true,
@@ -8,7 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './showcase.component.css'
 })
 export class ShowcaseComponent {
-  onClick(){
-    console.log("routing");
+
+  constructor(private router:Router){
   }
+
+  onClick(toRoute:string){
+    console.log("routing");
+    this.router.navigate([toRoute]);
+  }
+
+  protected my_image:string="assets/Ayush.jpg"
 }
