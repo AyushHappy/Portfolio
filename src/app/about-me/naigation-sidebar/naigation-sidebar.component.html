@@ -1,1 +1,23 @@
-<p>naigation-sidebar works!</p>
+<ng-container *ngFor="let navigationItem of navigationContent">
+  @if(navigationItem.isButton){
+  <div class="flex flex-row w-full border-b border-gray-300 pl-3" role="button">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example menu icon"
+      [fontIcon]="navigationItem.icon"
+      class="text-3xl text-amber-400 w-[10%] mt-3"
+    ></mat-icon>
+    <div
+      class="p-4"
+      (click)="onClickedRouteTo(navigationItem.routeUrl)"
+      [ngClass]="navigationItem.css"
+    >
+      {{ navigationItem.name }}
+    </div>
+  </div>
+  } @else {
+  <div class="p-4" [ngClass]="navigationItem.css">
+    {{ navigationItem.name }}
+  </div>
+  }
+</ng-container>

@@ -1,1 +1,70 @@
-<p>my-content works!</p>
+<div class="h-[30%] w-full flex justify-center items-center p-3">
+  <img src="assets/Ayush.jpg" class="h-full w-[20%]">
+</div>
+
+<div class="h-52 w-full p-5 flex flex-col justify-start items-center">
+  <p class="text-xl px-16">
+    Passionate Software Engineer with experience in rule-based processing, backend development, and full-stack
+    applications. Skilled in Java, Spring Boot, Drools, and Angular. Adept at designing scalable systems and optimizing
+    workflows for efficiency.
+  </p>
+</div>
+
+<div class="h-52 w-full flex flex-row justify-center">
+  <div class="h-full w-2/3">
+
+    <p class="font-bold w-full text-2xl flex justify-center mb-4">SKILLS</p>
+
+    <div class="grid grid-cols-2 gap-6">
+      <ul class="flex flex-col gap-4 list-disc list-inside ">
+        @for (skill of skills.slice(0, skills.length / 2); track skill) {
+        <li class="flex items-center list-disc ml-[40%] text-lg">
+          {{ skill }}
+        </li>
+        }
+      </ul>
+
+      <ul class="flex flex-col gap-4 list-disc">
+        @for (skill of skills.slice(skills.length / 2); track skill) {
+        <li class="flex items-center list-disc ml-[40%] text-lg">
+          {{ skill }}
+        </li>
+        }
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+<div class="h-52 w-full flex flex-row justify-center mt-5">
+  <div class="h-full w-full flex flex-col gap-8">
+
+    <p class="font-bold w-full text-2xl flex justify-center mb-4">EXPERIENCE</p>
+    <div class="h-full w-full flex flex-col gap-6">
+      @for (experience of myPersonalInfo.experiences; track experience) {
+      <div class="w-[90%] h-full flex flex-col gap-2">
+        <div class="w-full flex justify-between">
+          <div class="w-[50%] flex flex-row justify-end">
+            <p class="w-[90%] flex justify-start text-lg font-bold">
+              {{experience.companyName}}
+            </p>
+          </div>
+          <div class="w-[50%] gap-2 flex flex-row justify-end text-base font-semibold">
+            <p>
+              {{experience.startDate |date}}
+            </p>
+            <p>-</p>
+            <p>
+              {{isPresent(experience.endDate) ? "Present":experience.endDate | date}}
+            </p>
+          </div>
+        </div>
+        <div class="h-fit w-full pl-[6%]">
+          {{experience.desc}}
+        </div>
+      </div>
+      }
+    </div>
+
+  </div>
+</div>
