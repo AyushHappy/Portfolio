@@ -1,0 +1,19 @@
+@if(showContent){
+<div class="h-full">
+    <div class="h-[10%] border-b-[1.5px] border-white">
+        <ng-container>
+            <div class="p-4  text-white text-2xl">
+                Projects
+            </div>
+        </ng-container>
+    </div>
+    <div class="h-[90%]">
+        <ng-container *ngFor="let bottomItem of bottomContents">
+            <div class="p-4 border-b border-gray-300 text-white text-md" role="button"
+                (click)="onClickRouteTo(bottomItem.name)">
+                {{ bottomItem.name }}
+            </div>
+        </ng-container>
+    </div>
+</div>
+}

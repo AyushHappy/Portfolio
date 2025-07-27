@@ -1,0 +1,41 @@
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100vw;
+  scrollbar-width: none;  
+  position: relative;
+  -ms-overflow-style: none; 
+}
+
+body::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Edge */
+}
+
+.animate-gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg, #61023d5a, #011a60, #460187, #000e45);
+  background-size: 400% 400%;
+  animation: gradientAnimation 13s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  position: relative;
+}
